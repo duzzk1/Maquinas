@@ -22,14 +22,22 @@
         </nav>
     </header>
     <main>
-        <section>
-            <form action="POST">
+        <section class="cadastro">
+            <?php
+            if(isset($_POST["cadastrar"])){
+                if ($_POST["usuario"] != "") {
+                    $usuario = $_POST["usuario"];
+                }
+                $ramal = $_POST["ramal"];
+            }
+            ?>
+            <form action="" method="post">
                 <div class="input__Pessoa">
                 <h3>Pessoa</h2>
                 <label for="usuario">Usuário</label>
-                <input type="text" id="usuario">
+                <input type="text" id="usuario" name="usuario">
                 <label for="ramal">Ramal</label>
-                <input type="number" id="ramal" min="100" max="999">
+                <input type="number" id="ramal" min="100" max="999" name="ramal">
                 </div>
                 <div class="input__Maquina">
                 <h3>Máquina</h2>
@@ -42,7 +50,7 @@
                 <label for="sistema">Sistema Operacional</label>
                 <input type="text" id="sistema">
                 </div>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Cadastrar" name="cadastrar">
             </form>
         </section>
     </main>

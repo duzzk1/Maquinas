@@ -6,27 +6,35 @@
 
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: auto;
   width: 70%;
+
 }
 
 .menu img {
-  width: 20%;
+  width: 140px;
 }
 
 .menu ul {
   display: flex;
   gap: 16px;
+  
 }
 
-.active a {
-  background-color: aqua;
-  fill: red;
-  color: transparent;
+.menu ul li a{ 
+  padding: 5px 20px;
+
 }
+
+.item.active a {
+  position: relative;
+  border-radius: 20px;
+}
+
+
 
 .item a {
-  color: black;
+  text-transform: uppercase;
 }
