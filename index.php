@@ -24,38 +24,46 @@
     <main>
         <section class="cadastro">
             <?php
-            if(isset($_POST["cadastrar"])){
-                if ($_POST["usuario"] != "") {
-                    $usuario = $_POST["usuario"];
-                }
+            
+            if (isset($_POST["cadastrar"])) {
+
+                $usuario = $_POST["usuario"];
                 $ramal = $_POST["ramal"];
+
+                $processador = $_POST["processador"];
+                $ram = $_POST["ram"];
+                $values = json_encode($_POST);
+               
+                file_put_contents('users.json', "[".$values."],", FILE_APPEND);
+               
+                
             }
             ?>
             <form action="" method="post">
                 <div class="input__Pessoa">
-                <h3>Pessoa</h2>
-                <label for="usuario">Usuário</label>
-                <input type="text" id="usuario" name="usuario">
-                <label for="ramal">Ramal</label>
-                <input type="number" id="ramal" min="100" max="999" name="ramal">
+                    <h3>Pessoa</h2>
+                        <label for="usuario">Usuário</label>
+                        <input type="text" id="usuario" name="usuario">
+                        <label for="ramal">Ramal</label>
+                        <input type="number" id="ramal" min="100" max="999" name="ramal">
                 </div>
                 <div class="input__Maquina">
-                <h3>Máquina</h2>
-                <label for="processador">Processador</label>
-                <input type="text" id="processador">
-                <label for="memoria">Memória RAM</label>
-                <input type="number" id="ramal" min="100" max="999">
-                <label for="hd">HD</label>
-                <input type="number" id="ramal" min="1" max="999">
-                <label for="sistema">Sistema Operacional</label>
-                <input type="text" id="sistema">
+                    <h3>Máquina</h2>
+                        <label for="processador">Processador</label>
+                        <input type="text" id="processador" name="processador">
+                        <label for="memoria">Memória RAM</label>
+                        <input type="number" id="ram" min="0" max="999" name="ram">
+                        <label for="hd">HD</label>
+                        <input type="number" id="ramal" min="1" max="999">
+                        <label for="sistema">Sistema Operacional</label>
+                        <input type="text" id="sistema">
                 </div>
                 <input type="submit" value="Cadastrar" name="cadastrar">
             </form>
         </section>
     </main>
     <footer>
-        
+
     </footer>
 
     <script src='./src/js/main.js'></script>
