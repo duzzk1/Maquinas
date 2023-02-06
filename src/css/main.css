@@ -13,6 +13,12 @@ a {
   text-decoration: none;
 }
 
+header {
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(45px);
+          backdrop-filter: blur(45px);
+}
+
 .item a {
   color: black;
 }
@@ -24,7 +30,7 @@ a {
 
 .header {
   width: 100%;
-  height: 10vh;
+  height: 9vh;
   display: flex;
 }
 
@@ -62,6 +68,58 @@ a {
   font-family: "PT Sans Caption", sans-serif;
 }
 
+body {
+  background: rgb(65, 133, 223);
+  background: linear-gradient(180deg, #2fd366 5%, #50e4bf 20%, #50e4bf 60%, #2fd366 95%);
+}
+
+.cadastro form .input__Pessoa,
+.cadastro form .input__Maquina {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cadastro form .input__Pessoa:hover {
+  -webkit-animation: corInput 4s infinite alternate ease-in-out;
+          animation: corInput 4s infinite alternate ease-in-out;
+}
+
+.cadastro form .input__Maquina:hover {
+  -webkit-animation: corInput 4s infinite alternate ease-in-out;
+          animation: corInput 4s infinite alternate ease-in-out;
+}
+
+svg {
+  filter: blur(24px);
+}
+
+@-webkit-keyframes corInput {
+  0% {
+    background: rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    background: rgba(207, 142, 245, 0.35);
+  }
+  100% {
+    background: rgba(248, 255, 148, 0.35);
+  }
+}
+
+@keyframes corInput {
+  0% {
+    background: rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    background: rgba(207, 142, 245, 0.35);
+  }
+  100% {
+    background: rgba(248, 255, 148, 0.35);
+  }
+}
 .cadastro {
   display: flex;
   justify-content: center;
@@ -72,10 +130,11 @@ a {
 
 .cadastro form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 40px;
+  position: relative;
 }
 
 .cadastro form .input__Pessoa, .cadastro form .input__Maquina {
@@ -84,22 +143,124 @@ a {
   justify-content: center;
   align-items: center;
   gap: 5px;
+  min-width: 250px;
+  min-height: 500px;
 }
 
 .cadastro form .input__Pessoa {
-  border: 1px solid black;
   padding: 50px 15px;
-  border-radius: 5px;
 }
 
 .cadastro form .input__Maquina {
-  margin-top: 30px;
-  border: 1px solid black;
   padding: 50px 15px;
-  border-radius: 5px;
 }
 
 .cadastro form h3 {
   text-transform: uppercase;
   font-size: 1.5rem;
+  position: absolute;
+  top: 30px;
+}
+
+svg {
+  position: absolute;
+  z-index: -999;
+}
+
+.bola_cima {
+  left: -80px;
+  top: -100px;
+}
+
+.bola_meio {
+  right: 80px;
+  top: 150px;
+}
+
+.bola {
+  bottom: 75%;
+  left: 15%;
+  -webkit-animation: bola 10s infinite alternate ease-in-out;
+          animation: bola 10s infinite alternate ease-in-out;
+}
+
+.bola1 {
+  bottom: 75%;
+  right: 15%;
+  -webkit-animation: bola1 15s infinite alternate ease-in-out;
+          animation: bola1 15s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes bola {
+  0% {
+    bottom: 15%;
+    left: 15%;
+  }
+  25% {
+    bottom: 30%;
+    left: 15%;
+  }
+  50% {
+    bottom: 700px;
+    left: 960px;
+  }
+  100% {
+    bottom: 200px;
+    left: 960px;
+  }
+}
+
+@keyframes bola {
+  0% {
+    bottom: 15%;
+    left: 15%;
+  }
+  25% {
+    bottom: 30%;
+    left: 15%;
+  }
+  50% {
+    bottom: 700px;
+    left: 960px;
+  }
+  100% {
+    bottom: 200px;
+    left: 960px;
+  }
+}
+@-webkit-keyframes bola1 {
+  0% {
+    top: 15%;
+    right: 15%;
+  }
+  25% {
+    top: 30%;
+    right: 15%;
+  }
+  50% {
+    top: 700px;
+    right: 960px;
+  }
+  100% {
+    top: 200px;
+    right: 960px;
+  }
+}
+@keyframes bola1 {
+  0% {
+    top: 15%;
+    right: 15%;
+  }
+  25% {
+    top: 30%;
+    right: 15%;
+  }
+  50% {
+    top: 700px;
+    right: 960px;
+  }
+  100% {
+    top: 200px;
+    right: 960px;
+  }
 }/*# sourceMappingURL=main.css.map */
